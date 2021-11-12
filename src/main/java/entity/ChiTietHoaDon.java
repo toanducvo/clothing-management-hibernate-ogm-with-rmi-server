@@ -17,11 +17,11 @@ public class ChiTietHoaDon implements Serializable {
     public ChiTietHoaDon() {
     }
 
-    public ChiTietHoaDon(SanPham sanPham, int soLuong, double donGia, double thanhTien) {
+    public ChiTietHoaDon(SanPham sanPham, int soLuong, double donGia) {
         setSanPham(sanPham);
         setSoLuong(soLuong);
         setDonGia(donGia);
-        setThanhTien(thanhTien);
+        setThanhTien(soLuong * donGia);
     }
 
     public SanPham getSanPham() {

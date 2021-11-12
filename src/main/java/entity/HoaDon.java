@@ -3,6 +3,7 @@ package entity;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -19,7 +20,7 @@ public class HoaDon implements Serializable {
     @JoinColumn(name = "maNhanVien")
     private NhanVien nhanVien;
 
-    private LocalDateTime ngayTao;
+    private Date ngayTao;
     private double giamGia;
     private double tongTienHoaDon = 0.0;
 
@@ -33,14 +34,14 @@ public class HoaDon implements Serializable {
         setMaHoaDon(maHoaDon);
     }
 
-    public HoaDon(String maHoaDon, KhachHang khachHang, NhanVien nhanVien, LocalDateTime ngayTao, double giamGia, double tongTienHoaDon, List<ChiTietHoaDon> danhSachChiTietHoaDon) {
+    public HoaDon(String maHoaDon, KhachHang khachHang, NhanVien nhanVien, Date ngayTao, double giamGia, List<ChiTietHoaDon> danhSachChiTietHoaDon) {
         setMaHoaDon(maHoaDon);
         setKhachHang(khachHang);
         setNhanVien(nhanVien);
         setNgayTao(ngayTao);
         setGiamGia(giamGia);
-        setTongTienHoaDon(tongTienHoaDon);
         setDanhSachChiTietHoaDon(danhSachChiTietHoaDon);
+        this.tongTienHoaDon = this.danhSachChiTietHoaDon.stream().mapToDouble(ChiTietHoaDon::getThanhTien).sum() * ((100 - this.giamGia)/100);
     }
 
     public String getMaHoaDon() {
@@ -67,11 +68,11 @@ public class HoaDon implements Serializable {
         this.nhanVien = nhanVien;
     }
 
-    public LocalDateTime getNgayTao() {
+    public Date getNgayTao() {
         return ngayTao;
     }
 
-    public void setNgayTao(LocalDateTime ngayTao) {
+    public void setNgayTao(Date ngayTao) {
         this.ngayTao = ngayTao;
     }
 

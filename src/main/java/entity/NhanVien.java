@@ -5,6 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Table(name = "dsnhanvien")
@@ -12,7 +13,7 @@ public class NhanVien implements Serializable {
     @Id
     private String maNhanVien;
     private String hoTen;
-    private LocalDate ngaySinh;
+    private Date ngaySinh;
     private boolean gioiTinh;
     private String email;
     private String soDienThoai;
@@ -25,7 +26,7 @@ public class NhanVien implements Serializable {
         setMaNhanVien(maNhanVien);
     }
 
-    public NhanVien(String maNhanVien, String hoTen, LocalDate ngaySinh, boolean gioiTinh, String email, String soDienThoai, String CMND) {
+    public NhanVien(String maNhanVien, String hoTen, Date ngaySinh, boolean gioiTinh, String email, String soDienThoai, String CMND) {
         setMaNhanVien(maNhanVien);
         setHoTen(hoTen);
         setNgaySinh(ngaySinh);
@@ -51,11 +52,11 @@ public class NhanVien implements Serializable {
         this.hoTen = hoTen;
     }
 
-    public LocalDate getNgaySinh() {
+    public Date getNgaySinh() {
         return ngaySinh;
     }
 
-    public void setNgaySinh(LocalDate ngaySinh) {
+    public void setNgaySinh(Date ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
 

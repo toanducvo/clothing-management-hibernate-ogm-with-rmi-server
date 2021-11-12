@@ -17,7 +17,7 @@ public interface HoaDonDao extends Remote {
 
     long laySoLuongHoaDonTheoNgay(int ngay, int thang) throws RemoteException;
 
-    long layDoanhThuTheoThang(int thang) throws RemoteException;
+    double layDoanhThuTheoThang(int thang) throws RemoteException;
 
-    long layDoanhThuTheoNgay(int ngay, int thang) throws RemoteException;
+    double layDoanhThuTheoNgay(int ngay, int thang) throws RemoteException;
 }
