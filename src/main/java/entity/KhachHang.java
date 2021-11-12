@@ -5,6 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Table(name = "dskhachhang")
@@ -15,7 +16,7 @@ public class KhachHang implements Serializable {
     private String soDienThoai;
     private boolean gioiTinh;
     private String email;
-    private LocalDate ngaySinh;
+    private Date ngaySinh;
 
     public KhachHang() {
     }
@@ -24,7 +25,7 @@ public class KhachHang implements Serializable {
         setMaKhachHang(maKhachHang);
     }
 
-    public KhachHang(String maKhachHang, String hoTen, String soDienThoai, boolean gioiTinh, String email, LocalDate ngaySinh) {
+    public KhachHang(String maKhachHang, String hoTen, String soDienThoai, boolean gioiTinh, String email, Date ngaySinh) {
         setMaKhachHang(maKhachHang);
         setHoTen(hoTen);
         setSoDienThoai(soDienThoai);
@@ -73,11 +74,11 @@ public class KhachHang implements Serializable {
         this.email = email;
     }
 
-    public LocalDate getNgaySinh() {
+    public Date getNgaySinh() {
         return ngaySinh;
     }
 
-    public void setNgaySinh(LocalDate ngaySinh) {
+    public void setNgaySinh(Date ngaySinh) {
         this.ngaySinh = ngaySinh;
     }
 
