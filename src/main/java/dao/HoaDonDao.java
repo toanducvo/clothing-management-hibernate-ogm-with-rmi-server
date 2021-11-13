@@ -7,17 +7,17 @@ import java.rmi.RemoteException;
 import java.util.List;
 
 public interface HoaDonDao extends Remote {
-    List<HoaDon> layDanhSachHoaDon() throws RemoteException;
+    public List<HoaDon> layDanhSachHoaDon() throws RemoteException;
 
-    boolean themHoaDon(HoaDon hoaDon) throws RemoteException;
+    public boolean themHoaDon(HoaDon hoaDon) throws RemoteException;
 
-    HoaDon timHoaDonTheoMa(String maHoaDon) throws RemoteException;
+    public HoaDon timHoaDonTheoMa(String maHoaDon) throws RemoteException;
 
-    long laySoLuongHoaDonTheoThang(int thang) throws RemoteException;
+    public long laySoLuongHoaDonTheoThang(int thang) throws RemoteException;
 
-    long laySoLuongHoaDonTheoNgay(int ngay, int thang) throws RemoteException;
+    public long laySoLuongHoaDonTheoNgay(int ngay, int thang) throws RemoteException;
 
-    double layDoanhThuTheoThang(int thang) throws RemoteException;
+    public double layDoanhThuTheoThang(int thang) throws RemoteException;
 
-    double layDoanhThuTheoNgay(int ngay, int thang) throws RemoteException;
+    public double layDoanhThuTheoNgay(int ngay, int thang) throws RemoteException;
 }
