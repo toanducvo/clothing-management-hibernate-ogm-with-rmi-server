@@ -19,7 +19,7 @@
             <property name="hibernate.ogm.datastore.provider"
                       value="mongodb"/>
             <property name="hibernate.ogm.datastore.create_database"
-                      value="false"/>
+                      value="true"/>
             <property name="hibernate.ogm.datastore.host"
                       value="localhost"/>
             <property name="hibernate.ogm.datastore.port"
