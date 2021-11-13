@@ -111,4 +111,25 @@ public class KhachHangImpl extends UnicastRemoteObject implements KhachHangDao {
 		}
         return null;
     }
+
+	@Override
+	public boolean capNhatThongTinKhachHang(KhachHang khachHang) {
+		OgmSession session = entityManager.unwrap(OgmSession.class);
+        Transaction trans = session.getTransaction();
+        AtomicBoolean rs = new AtomicBoolean(false);
+        
+        try {
+        	trans.begin();
+        	
+        	session.merge(khachHang);
+        	rs.set(true);
+        
+            trans.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			trans.rollback();
+			return false;
+		}
+        return rs.get();
+	}
 }
